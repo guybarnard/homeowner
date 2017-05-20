@@ -47,19 +47,19 @@ module.exports = (dato, root, i18n) => {
   // Create a `_posts` directory (or empty it if already exists)...
   root.directory('source/_posts', dir => {
     // ...and for each of the works stored online...
-    dato.works.forEach((work, index) => {
+    dato.kitchens.forEach((kitchens, index) => {
       // ...create a markdown file with all the metadata in the frontmatter
-      dir.createPost(`${work.slug}.md`, 'yaml', {
+      dir.createPost(`${kitchen.slug}.md`, 'yaml', {
         frontmatter: {
-          title: work.title,
+          title: kitchen.title,
           layout: 'post',
-          media: work.media ? work.media.url() : null,
-          coverImage: work.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
-          detailImage: work.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
+          media: kitchen.media ? kitchen.media.url() : null,
+          coverImage: kitchen.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
+          detailImage: kitchen.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
           position: index,
-          contentExcerpt: work.excerpt,
+          contentExcerpt: kitchen.excerpt,
         },
-        content: work.description
+        content: kitchen.description
       });
     });
   });
