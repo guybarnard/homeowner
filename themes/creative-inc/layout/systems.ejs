@@ -1,8 +1,6 @@
 
 <div class="showcase" data-next-url="<%= page.next ? page.next_link : '' %>">
-  <% get_posts(
-  query: categories: ‘system’
-  }).each(kitchen => { %>
+  <% site.categories.find({name: 'system'}).each(kitchen => { %>
     <div class="showcase__item">
       <figure class="card">
         <a href="/<%= kitchen.path %>" class="card__image">
