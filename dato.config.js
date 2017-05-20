@@ -47,7 +47,7 @@ module.exports = (dato, root, i18n) => {
   // Create a `_posts` directory (or empty it if already exists)...
   root.directory('source/_posts', dir => {
     // ...and for each of the works stored online...
-    dato.kitchens.forEach((kitchens, index) => {
+    dato.kitchens.forEach((kitchen, index) => {
       // ...create a markdown file with all the metadata in the frontmatter
       dir.createPost(`${kitchen.slug}.md`, 'yaml', {
         frontmatter: {
