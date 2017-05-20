@@ -32,8 +32,8 @@
               <a href="/">Home</a>
             </li>
               <% site.data.sectiontypes.find(section => { %>
-              <li >
-              <a href="<%= section.slug %>"><%= section.title %></a>
+            <li class="<%= (path.indexOf(section.slug) > -1) ? 'is-active' : '' %>">
+              <a href="<%= section.path %>"><%= section.title %></a>
             </li>
             <% }) %>
              
