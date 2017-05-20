@@ -53,6 +53,7 @@ module.exports = (dato, root, i18n) => {
         frontmatter: {
           title: work.title,
           layout: 'post',
+          media: work.media.url(),
           coverImage: work.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
           detailImage: work.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
           position: index,
