@@ -37,7 +37,7 @@ module.exports = (dato, root, i18n) => {
     dato.categories.map(category => {
       return {
         title:        category.title,
-        coverImage: kitchen.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
+        coverImage: category.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
         slug:     './' + category.slug
       };
     })
