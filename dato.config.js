@@ -20,7 +20,7 @@ module.exports = (dato, root, i18n) => {
     language: dato.site.locales[0],
     intro: dato.home.introText,
     copyright: dato.home.copyright,
-    sideimage: dato.home.sideimage,
+    sideimage: dato.home.sideimage.url({ w: 150, fm: 'jpg', auto: 'compress' }),
     // iterate over all the `social_profile` item types
     socialProfiles: dato.socialProfiles.map(profile => {
       return {
