@@ -40,7 +40,7 @@ module.exports = (dato, root, i18n) => {
   });
   
   root.createDataFile('source/_data/sectiontypes.yml', 'yaml', catfile)
- 
+  console.log(util.inspect(catfile));
 
 
   // Create a markdown file with content coming from the `about_page` item
