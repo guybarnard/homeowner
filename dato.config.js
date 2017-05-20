@@ -31,14 +31,15 @@ module.exports = (dato, root, i18n) => {
     seoMetaTags: dato.home.seoMetaTags
   });
   
-  var catfile = dato.categories.map(category => {
+  var catfile = dato.categories.map( category => 
       return {
         title:        category.title,
         coverImage:   category.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
         slug:     './' + category.slug
       };
-    });
-        console.log(util.inspect(catfile);
+    );
+        
+  console.log(util.inspect(catfile));
   
   root.createDataFile('source/_data/categories.yml', 'yaml', catfile)
  
