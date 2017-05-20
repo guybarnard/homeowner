@@ -31,18 +31,17 @@ module.exports = (dato, root, i18n) => {
     seoMetaTags: dato.home.seoMetaTags
   });
   
-  
-  root.createDataFile(
-    'source/_data/categories.yml', 'yaml',
-    dato.categories.map(category => {
-      console.log(util.inspect(category.coverImage.url()));
+  var catfile = dato.categories.map(category => {
       return {
         title:        category.title,
         coverImage:   category.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
         slug:     './' + category.slug
       };
-    })
-  );
+    });
+        console.log(util.inspect(catfile);
+  
+  root.createDataFile('source/_data/categories.yml', 'yaml', catfile)
+ 
 
 
   // Create a markdown file with content coming from the `about_page` item
