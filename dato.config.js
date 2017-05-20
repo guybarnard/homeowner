@@ -35,6 +35,7 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile(
     'source/_data/categories.yml', 'yaml',
     dato.categories.map(category => {
+      console.log(JSON.stringify(category));
       return {
         title:        category.title,
         coverImage:   category.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
