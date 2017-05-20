@@ -39,7 +39,7 @@ module.exports = (dato, root, i18n) => {
       };
   });
   
-  root.createDataFile('source/_data/categories.yml', 'yaml', catfile)
+  root.createDataFile('source/_data/sectiontypes.yml', 'yaml', catfile)
  
 
 
