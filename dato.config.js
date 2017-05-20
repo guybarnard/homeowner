@@ -54,7 +54,7 @@ module.exports = (dato, root, i18n) => {
           title: work.title,
           layout: 'post',
           media: work.media ? work.media.url() : null,
-          coverImage: work.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
+          coverImage: work.coverImage.url({ w: 300, fm: 'jpg', auto: 'compress' }),
           detailImage: work.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
           position: index,
           contentExcerpt: work.excerpt,
