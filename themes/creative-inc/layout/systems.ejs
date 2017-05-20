@@ -1,1 +1,22 @@
 
+<div class="showcase" data-next-url="<%= page.next ? page.next_link : '' %>">
+  <% get_posts(
+  query: categories: ‘system’
+  }).each(kitchen => { %>
+    <div class="showcase__item">
+      <figure class="card">
+        <a href="/<%= kitchen.path %>" class="card__image">
+          <img src="<%= kitchen.coverImage %>">
+        </a>
+        <figcaption class="card__caption">
+          <h6 class="card__title">
+            <a href="/<%= kitchen.path %>"><%= kitchen.title %></a>
+          </h6>
+          <div class="card__description">
+            <p><%= kitchen.contentExcerpt %></p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  <% }) %>
+</div>
