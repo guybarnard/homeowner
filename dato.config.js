@@ -34,7 +34,7 @@ module.exports = (dato, root, i18n) => {
   
   root.createDataFile(
     'source/_data/categories.yml', 'yaml',
-    dato.categories.sort(by('name')).map(category => {
+    dato.categories.map(category => {
       return {
         title:        category.title,
         coverImage: kitchen.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
