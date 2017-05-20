@@ -35,7 +35,8 @@ module.exports = (dato, root, i18n) => {
       return {
         title:        sectiontype.title,
         coverImage:   sectiontype.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
-        slug:     './' + sectiontype.slug
+        slug:     sectiontype.slug,
+        path:     '/' + sectiontype.slug
       };
   });
   
