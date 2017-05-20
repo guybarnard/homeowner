@@ -35,7 +35,7 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile(
     'source/_data/categories.yml', 'yaml',
     dato.categories.map(category => {
-      console.log(util.inspect(category));
+      console.log(util.inspect(category.coverImage.url()));
       return {
         title:        category.title,
         coverImage:   category.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
