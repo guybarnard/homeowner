@@ -1,5 +1,5 @@
 theme: creative-inc
-permalink: works/:title/
+permalink: doc/:title/
 
 index_generator:
   per_page: 5
