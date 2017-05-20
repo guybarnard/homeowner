@@ -53,6 +53,7 @@ module.exports = (dato, root, i18n) => {
         frontmatter: {
           title: kitchen.title,
           layout: 'post',
+          category: 'kitchen',
           media: kitchen.media ? kitchen.media.url() : null,
           coverImage: kitchen.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
           detailImage: kitchen.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
@@ -60,6 +61,22 @@ module.exports = (dato, root, i18n) => {
           contentExcerpt: kitchen.excerpt,
         },
         content: kitchen.description
+      });
+    });
+     dato.systems.forEach((system, index) => {
+      // ...create a markdown file with all the metadata in the frontmatter
+      dir.createPost(`${system.slug}.md`, 'yaml', {
+        frontmatter: {
+          title: system.title,
+          layout: 'post',
+          category: 'system',
+          media: system.media ? system.media.url() : null,
+          coverImage: system.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
+          detailImage: system.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
+          position: index,
+          contentExcerpt: system.excerpt,
+        },
+        content: system.description
       });
     });
   });
