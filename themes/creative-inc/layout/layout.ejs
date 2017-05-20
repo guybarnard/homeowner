@@ -31,9 +31,12 @@
             <li class="<%= path === 'index.html' ? 'is-active' : '' %>">
               <a href="/">Home</a>
             </li>
-            <li class="<%= path === 'about/index.html' ? 'is-active' : '' %>">
-              <a href="/about">About</a>
+              <% site.data.sectiontypes.find(section => { %>
+              <li >
+              <a href="<%= section.slug %>"><%= section.title %></a>
             </li>
+            <% }) %>
+             
           </ul>
 
           <p class="sidebar__social">
