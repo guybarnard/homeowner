@@ -1,13 +1,13 @@
 <div class="showcase" data-next-url="<%= page.next ? page.next_link : '' %>">
-  <% site.categories.each(category => { %>
+  <% site.data.sectiontypes.each(sectiontypes => { %>
     <div class="showcase__item">
       <figure class="card">
-        <a href="/<%= category.slug %>" class="card__image">
-          <img src="<%= category.coverImage %>">
+        <a href="/<%= sectiontypes.slug %>" class="card__image">
+          <img src="<%= sectiontypes.coverImage %>">
         </a>
         <figcaption class="card__caption">
           <h6 class="card__title">
-            <a href="/<%= category.slug %>"><%= category.title %></a>
+            <a href="/<%= sectiontypes.slug %>"><%= sectiontypes.title %></a>
           </h6>
         </figcaption>
       </figure>
