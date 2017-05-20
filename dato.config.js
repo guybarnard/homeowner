@@ -11,7 +11,7 @@
 //
 // Read all the details here:
 // https://github.com/datocms/js-datocms-client/blob/master/docs/dato-cli.md
-
+var util = require('util'); 
 module.exports = (dato, root, i18n) => {
 
   // Create a YAML data file to store global data about the site
@@ -35,7 +35,7 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile(
     'source/_data/categories.yml', 'yaml',
     dato.categories.map(category => {
-      console.log(JSON.stringify(category));
+      console.log(util.inspect(category));
       return {
         title:        category.title,
         coverImage:   category.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
