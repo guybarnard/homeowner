@@ -43,20 +43,6 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile('source/_data/sectiontypes.yml', 'yaml', catfile)
   console.log(util.inspect(catfile));
 
-
-  // Create a markdown file with content coming from the `about_page` item
-  // type stored in DatoCMS
-  root.createPost(`source/about/index.md`, 'yaml', {
-    frontmatter: {
-      title: dato.aboutPage.title,
-      subtitle: dato.aboutPage.subtitle,
-      photo: dato.aboutPage.photo.url({ w: 800, fm: 'jpg', auto: 'compress' }),
-      layout: 'page',
-      seoMetaTags: dato.aboutPage.seoMetaTags,
-    },
-    content: dato.aboutPage.bio
-  });
-
   // Create a `_posts` directory (or empty it if already exists)...
   root.directory('source/_posts', dir => {
     // ...and for each of the works stored online...
