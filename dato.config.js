@@ -58,10 +58,6 @@ module.exports = (dato, root, i18n) => {
           detailImage: work.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
           position: index,
           contentExcerpt: work.excerpt,
-          seoMetaTags: work.seoMetaTags,
-          extraImages: work.gallery.map(image =>
-            image.url({ h: 300, fm: 'jpg', auto: 'compress' })
-          ),
         },
         content: work.description
       });
