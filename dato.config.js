@@ -30,6 +30,19 @@ module.exports = (dato, root, i18n) => {
     faviconMetaTags: dato.site.faviconMetaTags,
     seoMetaTags: dato.home.seoMetaTags
   });
+  
+  
+  root.createDataFile(
+    'source/_data/categories.yml', 'yaml',
+    dato.categories.sort(by('name')).map(category => {
+      return {
+        title:        category.title,
+        coverImage: kitchen.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
+        slug:     './' + category.slug
+      };
+    })
+  );
+
 
   // Create a markdown file with content coming from the `about_page` item
   // type stored in DatoCMS
